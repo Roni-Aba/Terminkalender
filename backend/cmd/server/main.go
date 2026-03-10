@@ -7,10 +7,10 @@ import (
 )
 
 type Service struct {
-	ID              int    `json:"id"`
-	Name            string `json:"name"`
-	DurationMinutes int    `json:"durationMinutes"`
-	Price           int    `json:"price"`
+	ID       int    `json:"id"`
+	Name     string `json:"name"`
+	Duration int    `json:"duration"`
+	Price    int    `json:"price"`
 }
 
 type Staff struct {
@@ -26,9 +26,9 @@ func main() {
 
 	// demo data
 	services := []Service{
-		{ID: 1, Name: "Haarschnitt", DurationMinutes: 30, Price: 25},
-		{ID: 2, Name: "Bart trimmen", DurationMinutes: 15, Price: 12},
-		{ID: 3, Name: "Färben", DurationMinutes: 90, Price: 65},
+		{ID: 1, Name: "Haarschnitt", Duration: 30, Price: 25},
+		{ID: 2, Name: "Bart trimmen", Duration: 15, Price: 12},
+		{ID: 3, Name: "Färben", Duration: 90, Price: 65},
 	}
 
 	staff := []Staff{
