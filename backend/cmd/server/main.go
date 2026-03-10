@@ -18,6 +18,33 @@ type Staff struct {
 	Name string `json:"name"`
 }
 
+type Appointment struct {
+	ID           int    `json:"id"`
+	StaffID      int    `json:"staffId"`
+	ServiceID    int    `json:"serviceId"`
+	Date         string `json:"date"`
+	Start        string `json:"start"`
+	End          string `json:"json:end"`
+	CustomerName string `json:"customerName"`
+	Status       string `json:"status"`
+}
+
+type AvailabilityResponse struct {
+	Date       string   `json:"date"`
+	StaffID    int      `json:"staffId"`
+	ServiceID  int      `json:"serviceID"`
+	SlotMin    int      `json:"slotMinutes"`
+	FreeStarts []string `json:"freeStarts"`
+}
+
+type CreateAppointmentRequest struct {
+	StaffID      int    `json:"staffID"`
+	ServiceID    int    `json:"serviceId"`
+	Date         string `json:"date"`
+	Start        string `json:"start"`
+	CustomerName string `json:"customerName"`
+}
+
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
